@@ -34,6 +34,9 @@ module.exports = {
                     'ts-loader'
                 ],
                 exclude: /node_modules/
+            },
+            {
+                test: /\.less$/,
             }
         ]
     },
