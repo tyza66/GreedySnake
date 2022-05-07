@@ -46,11 +46,19 @@ body {
         &>.food{
             width: 10px;
             height: 10px;
-            background-color: black;
-            border: 1px solid @bg-color;
             position: absolute;
             left: 10px;
             top: 100px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            &>div{
+                width: 4px;
+                height: 4px;
+                background-color: #000;
+                transform: rotate(45deg);
+            }
         }
     }
 
