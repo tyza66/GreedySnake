@@ -7,8 +7,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        environment:{
-            arrowFunctions: false
+        environment: {
+            arrowFunction: false
         }
     },
     module: {
@@ -23,10 +23,10 @@ module.exports = {
                                 "@babel/preset-env",
                                 {
                                     targets: {
-                                        "chrome":"88"
+                                        "chrome": "88"
                                     },
-                                    "corejs":"3",
-                                    "useBuiltIns":"usage"
+                                    "corejs": "3",
+                                    "useBuiltIns": "usage"
                                 }
                             ]]
                         }
@@ -37,6 +37,25 @@ module.exports = {
             },
             {
                 test: /\.less$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [[
+                                    "postcss-preset-env",
+                                    {
+                                        browsers: 'last 2 versions'
+                                    }
+                                ]
+                                ]
+                            }
+                        }
+                    },
+                    "less-loader"
+                ]
             }
         ]
     },

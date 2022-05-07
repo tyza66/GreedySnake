@@ -1,1 +1,2 @@
-console.log("hello");
+import './style/index.less';
+console.log("hello tyza66");
