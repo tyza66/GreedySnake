@@ -7,6 +7,8 @@ class GameControl{
     snake:Snake;
     food:Food;
     scorePanel:ScorePanel;
+    //蛇的移动方向
+    direction: String = '';
 
     constructor(){
         this.snake = new Snake();
@@ -16,11 +18,13 @@ class GameControl{
     }
 
     init(){
-        document.addEventListener('keydown',this.keydownHandler)
+        document.addEventListener('keydown',this.keydownHandler.bind(this))
     }
 
     keydownHandler(event: KeyboardEvent){
-        console.log(event.key);
+        //console.log(event.key);
+        
+        this.direction = event.key;
     }
 }
 

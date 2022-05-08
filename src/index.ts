@@ -2,7 +2,10 @@ import './style/index.less';
 import GameControl  from './moduls/GameControl';
 
 console.log("hello tyza66");
-new GameControl();
+const gc = new GameControl();
+setInterval(() =>{
+    console.log(gc.direction);
+},1000);
 
 
 
